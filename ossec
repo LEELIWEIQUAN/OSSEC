@@ -1,0 +1,9 @@
+#Add the GPG key
+wget -q -O - https://www.atomicorp.com/RPM-GPG-KEY.atomicorp.txt  | sudo apt-key add -
+#Add the repo configuration to sources.list
+echo "deb https://updates.atomicorp.com/channels/atomic/ubuntu $DISTRIB_CODENAME main" >>  /etc/apt/sources.list.d/atomic.list
+sudo apt-get update
+#server
+sudo apt-get install ossec-hids-server
+#agent
+sudo apt-get install ossec-hids-agent
